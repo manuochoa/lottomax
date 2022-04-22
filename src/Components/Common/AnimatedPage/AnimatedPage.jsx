@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import classes from './AnimatedPage.module.css'
 
 const AnimatedPage = (props) => {
-    const { children, containerRef } = props
+    const { children } = props
 
     const animations = {
         initial: { opacity: 0, x: 1000 },
@@ -13,7 +13,6 @@ const AnimatedPage = (props) => {
 
     return (
         <motion.div
-            ref={containerRef}
             variants={animations}
             initial="initial"
             exit="exit"

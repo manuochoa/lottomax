@@ -45,23 +45,12 @@ const TransitionRoutes = () => {
         )
     }, [location.pathname])
 
-    useEffect(() => {
-        function handleScroll(evt) {
-          console.log(evt);
-        }
-    
-        containerRef.current.addEventListener("scroll", handleScroll);
-    
-        return function cleanup() {
-            containerRef.current.removeEventListener("scroll", handleScroll);
-        };
-    });
 
     return (
-        <div className={`wrapper ${currentPage.name}`}>
+        <div className={`wrapper ${currentPage.name}`} ref={containerRef}>
             <Navbar handleWallet={handleWallet}/>
             {isOpenConnetWallet && <ConnectWallet onClose={handleWallet}/>}
-            <AnimatedPage containerRef={containerRef}>
+            <AnimatedPage>
                 <SlideRoutes duration={1000} timing="ease-in-out">
                     {/* <Routes > */}
                         <Route exact path="/" element={<Home/>}/>
