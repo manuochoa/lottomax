@@ -47,3 +47,18 @@
         margin-bottom: 66px;
     }
 }
+
+@media screen and (max-width: 468px) {
+    .main {
+        margin-bottom: 15px;
+    }
+    .main button {
+        display: none;
+    }
+    .dopCard {
+        display: none;
+    }
+    .countdownLabel {
+        margin-bottom: 0;
+    }
+}

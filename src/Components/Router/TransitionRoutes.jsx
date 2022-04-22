@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import Home from '../../Pages/Home/Home';
 import AboutUs from '../../Pages/AboutUs/AboutUs';
@@ -12,8 +12,24 @@ import ConnectWallet from '../Common/ConnectWallet/ConnectWallet';
 import SlideRoutes from 'react-slide-routes';
 import AnimatedPage from '../Common/AnimatedPage/AnimatedPage';
 
+const pages = [
+    { path: "/", name: "home", order: 0 },
+    { path: "/about_us", name: "about_us", order: 1 },
+    { path: "/how_it_works", name: "how_it_works", order: 2 },
+    { path: "/mint", name: "mint", order: 3 },
+    { path: "/contact_us", name: "contact_us", order: 4 },
+]
+
 const TransitionRoutes = () => {
     const location = useLocation()
+
+    const containerRef = useRef()
+
+    const [currentPage, setCurrentPage] = useState(
+        pages.find(page => page.path === location.pathname) ?
+        pages.find(page => page.path === location.pathname) :
+        pages[0]
+    )
 
     const [isOpenConnetWallet, setIsOpenConnectWallet] = useState(false)
 
@@ -21,36 +37,31 @@ const TransitionRoutes = () => {
         setIsOpenConnectWallet(!isOpenConnetWallet)
     }
 
-    const setPage = (pathname) => {
-        // SET PAGE FOR CSS CLASSES
-        let page = null;
-        switch (pathname){
-            case('/'):
-                page = 'home';
-                break;
-            case('/about_us'):
-                page = 'about_us';
-                break;
-            case('/how_it_works'):
-                page = 'how_it_works';
-                break;
-            case('/mint'):
-                page = 'mint';
-                break;
-            case('/contact_us'):
-                page = 'contact_us';
-                break;
-            default:
-                page = 'home';
+    useEffect(() => {
+        setCurrentPage(
+            pages.find(page => page.path === location.pathname) ?
+            pages.find(page => page.path === location.pathname) :
+            pages[0]
+        )
+    }, [location.pathname])
+
+    useEffect(() => {
+        function handleScroll(evt) {
+          console.log(evt);
         }
-        return page;
-    }
+    
+        containerRef.current.addEventListener("scroll", handleScroll);
+    
+        return function cleanup() {
+            containerRef.current.removeEventListener("scroll", handleScroll);
+        };
+    });
 
     return (
-        <div className={`wrapper ${setPage(location.pathname)}`}>
+        <div className={`wrapper ${currentPage.name}`}>
             <Navbar handleWallet={handleWallet}/>
             {isOpenConnetWallet && <ConnectWallet onClose={handleWallet}/>}
-            <AnimatedPage>
+            <AnimatedPage containerRef={containerRef}>
                 <SlideRoutes duration={1000} timing="ease-in-out">
                     {/* <Routes > */}
                         <Route exact path="/" element={<Home/>}/>

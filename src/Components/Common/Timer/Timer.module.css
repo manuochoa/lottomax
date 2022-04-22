@@ -48,3 +48,9 @@
         transform: scale(.9);
     }
 }
+
+@media screen and (max-width: 350px) {
+    .main {
+        width: 110%;
+    }
+}

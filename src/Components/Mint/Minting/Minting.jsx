@@ -73,6 +73,13 @@ const Minting = (props) => {
                     </div>
                 </div>
                 <CustomButton>MINT</CustomButton>
+                <div className={classes.reward}>
+                    <div className={classes.dopCard}>
+                        <Text variant="p1">257</Text>
+                        <Text variant="label">Total № of Tickets you Minted</Text>
+                    </div>
+                    {/* <CustomButton>Claim Rewards</CustomButton> */}
+                </div>
             </Card>
         </div>
     )

@@ -10,6 +10,7 @@ import CustomSlider from '../../Components/Common/Slider/Slider'
 import AnimatedPage from '../../Components/Common/AnimatedPage/AnimatedPage'
 import Lottery from '../../Components/Mint/Lottery/Lottery'
 import Minting from '../../Components/Mint/Minting/Minting'
+import Stats from '../../Components/Mint/Stats/Stats'
 
 const Mint = (props) => {
     const {
@@ -53,6 +54,9 @@ const Mint = (props) => {
                         <Text variant="p1">1102</Text>
                         <Text variant="label">Tickets Awarding 10 BUSD</Text>
                     </Card>
+                </div>
+                <div className={classes.statsMobile}>
+                    <Stats/>
                 </div>
                 <div className={classes.content}>
                     <div className={classes.side}>
@@ -101,6 +105,7 @@ const Mint = (props) => {
                 <div className={classes.mobile}>
                     <div className={classes.mobileContainer}>
                         <div className={classes.side}>
+                            <Lottery date={date}/>
                             <Minting
                                 count={count}
                                 handleCount={handleCount}
@@ -116,9 +121,9 @@ const Mint = (props) => {
                                 <CustomSlider images={nfts}/>
                             </Card>
                         </div>
-                        <div className={classes.side}>
-                            <Lottery date={date}/>
-                        </div>
+                        
+                            
+                        
                     </div>
                 </div>
             </PaddingContainer>

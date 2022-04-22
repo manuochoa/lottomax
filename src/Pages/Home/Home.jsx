@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 import MaxWidthContainer from '../../Components/UI/Container/MaxWidthContainer/MaxWidthContainer'
 import PaddingContainer from '../../Components/UI/Container/PaddingContainer/PaddingContainer'
 import Header from '../../Components/UI/Text/Header/Header'
@@ -7,30 +7,17 @@ import classes from './Home.module.css'
 import star_with_line from '../../Assets/Images/star_with_line.svg'
 import CallToAction from '../../Components/UI/Button/CallToAction/CallToAction'
 
-import diamond from '../../Assets/Images/diamond.png'
 import { useNavigate } from 'react-router-dom'
-import AnimatedPage from '../../Components/Common/AnimatedPage/AnimatedPage'
 
-// import diamond_video from '../../Assets/Video/diamond.webm'
+import diamond_gif from '../../Assets/Gif/diamond.gif'
 
-const Home = (props) => {
+const Home = () => {
 
     const navigate = useNavigate()
-
-    // const diamondRef = useRef()
 
     const onClick = () => {
         navigate('/mint')
     }
-
-    // useEffect(() => {
-    //     if(diamondRef) {
-    //         diamondRef.current.setAttribute("autoplay", "");
-    //         diamondRef.current.setAttribute("loop", "");
-    //         diamondRef.current.setAttribute("playsinline", "");
-    //         diamondRef.current.setAttribute("muted", "");
-    //     }
-    // }, [diamondRef])
 
     return (
         <PaddingContainer>
@@ -54,13 +41,13 @@ const Home = (props) => {
                         LottoMax is setting a new standard in the crypto and lottery space alike.
                         Presented by the Exclusive Diamond Holders Club. 
                     </Text>
+                    <div className={classes.diamondMobile}>
+                        <img src={diamond_gif} alt="diamond"/>
+                    </div>
                     <CallToAction text="Mint Now" onClick={onClick}/>
                 </div>
                 <div className={classes.diamond}>
-                    {/* <video autoPlay loop muted playsInline ref={diamondRef}>
-                        <source src={diamond_video} type="video/webm"/>
-                    </video> */}
-                    <img src={diamond} alt="diamond"/>
+                    <img src={diamond_gif} alt="diamond"/>
                 </div>
             </MaxWidthContainer>
         </PaddingContainer>

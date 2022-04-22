@@ -96,6 +96,9 @@
     padding: 4px 8px;
     box-sizing: border-box;
 }
+.reward {
+    display: none;
+}
 
 @media screen and (max-width: 1440px) {
     .bigCard {
@@ -131,5 +134,28 @@
     }
     .result {
         margin-top: 16px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .reward {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 16px;
+    }
+    .dopCard {
+        background: rgba(174, 201, 233, 0.04);
+        border-radius: 16px;
+        padding: 16px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        width: 100%;
+        margin-top: auto;
+        /* margin-bottom: 16px; */
     }
 }
