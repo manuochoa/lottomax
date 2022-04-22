@@ -1,0 +1,47 @@
+.p1 {
+    font-family: 'MetroSans-Bold';
+    font-size: 20px;
+    color: white;
+    font-weight: 700;
+}
+.p2 {
+    font-family: 'MetroSans-Regular';
+    color: rgba(184, 203, 238, 0.8);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22.4px;
+}
+.p2_italic {
+    font-family: 'MetroSans-BoldItalic';
+    color: white;
+    font-size: 16px;
+    font-family: 700;
+}
+.action {
+    font-family: 'MetroSans-Bold';
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.label {
+    font-family: 'MetroSans-SemiBold';
+    font-style: italic;
+    color: #B8CBEE;
+    opacity: .6;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+@media screen and (max-width: 468px) {
+    .p2_italic {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .p2 {
+        font-size: 13px;
+        line-height: 20px;
+    }
+}

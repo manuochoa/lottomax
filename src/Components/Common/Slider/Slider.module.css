@@ -1,0 +1,105 @@
+.main {
+    background: #121023;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.main img {
+    width: 60%;
+    opacity: 1;
+    animation:fadeIn 1s linear;
+}
+.button {
+    position: absolute !important;
+    top: 45% !important;
+    background-color: white !important;
+    width: 36px !important;
+    height: 36px !important;
+}
+.button:disabled {
+    background: rgba(174, 201, 233, 0.2) !important;
+    opacity: 0.5,
+}
+.rightBut {
+    right: 3%;
+}
+.leftBut {
+    left: 3%;
+}
+.dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    justify-content: center;
+}
+.dot {
+    border-radius: 50%;
+    background: rgba(174, 201, 233, 0.2);
+    width: 8px;
+    height: 8px;
+    border: 2px solid transparent;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+.dot:hover {
+    border: 2px solid rgba(174, 201, 233, 0.6);
+}
+.active {
+    border: 2px solid white;
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity:0
+    }
+    100% {
+      opacity:1;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .main {
+        max-height: 30vh;;
+    }
+    .main img {
+        width: auto;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .button {
+        width: 26px !important;
+        height: 26px !important;
+    }
+    .leftBut {
+        left: -5%;
+    }
+    .rightBut {
+        right: -5%;
+    }
+    .dots {
+        bottom: 20px;
+    }
+    .main img {
+        width: 80%;
+        height: 150px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .main img {
+        width: 100%;
+    }
+}

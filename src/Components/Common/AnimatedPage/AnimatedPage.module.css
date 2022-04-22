@@ -1,0 +1,12 @@
+.main {
+    padding-top: 76px;
+}
+.main > div {
+    overflow: initial !important;
+}
+
+@media screen and (max-width: 350px) {
+    .main {
+        padding-top: 66px;
+    }
+}

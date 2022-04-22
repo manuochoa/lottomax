@@ -1,0 +1,88 @@
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* margin-top: 85px; */
+    margin-bottom: 40px;
+}   
+.diamonds {
+    width: 50%;
+}
+.diamonds img {
+    width: 80%;
+    margin-top: 80px;
+}
+.side {
+    width: 50%;
+    position: relative;
+}
+.content {
+    padding-left: 55px;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.line {
+    position: absolute;
+    left: 10px;
+    bottom: 40px;
+    opacity: .5;
+}
+.side button {
+    left: -40px !important;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .content {
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .main {
+        flex-direction: column-reverse;
+    }
+    .side {
+        width: 100%;
+    }
+    .diamonds {
+        display: none;
+        width: 80%;
+        /* display: flex; */
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 468px) {
+    .line {
+        display: none;
+    }
+    .content {
+        padding-left: 0;
+        gap: 16px;
+    }
+    .main {
+        margin-bottom: 0;
+    }
+    .side button {
+        left: 0 !important;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .side button {
+        left: -20px !important;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .main {
+        padding-top: 130px;
+    }
+}

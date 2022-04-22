@@ -1,0 +1,37 @@
+.main {
+  /* background-color: black; */
+  height: 100vh;
+}
+
+
+
+
+
+@font-face {
+  font-family: MetroSans-Medium;
+  src: url('./Assets/Fonts/MetroSans-Medium.otf');
+}
+@font-face {
+  font-family: MetroSans-Regular;
+  src: url('./Assets/Fonts/MetroSans-Regular.otf');
+}
+@font-face {
+  font-family: MetroSans-LightItalic;
+  src: url('./Assets/Fonts/MetroSans-LightItalic.otf');
+}
+@font-face {
+  font-family: MetroSans-SemiBold;
+  src: url('./Assets/Fonts/MetroSans-SemiBold.otf');
+}
+@font-face {
+  font-family: MetroSans-BoldItalic;
+  src: url('./Assets/Fonts/MetroSans-BoldItalic.otf');
+}
+@font-face {
+  font-family: MetroSans-Bold;
+  src: url('./Assets/Fonts/MetroSans-Bold.otf');
+}
+@font-face {
+  font-family: Valky;
+  src: url('./Assets/Fonts/Valky.otf');
+}

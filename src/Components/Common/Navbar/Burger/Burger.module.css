@@ -1,0 +1,31 @@
+.links {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 25px;
+    position: relative;
+    top: -25px;
+}
+.links a {
+    font-family: 'MetroSans-Medium';
+    color: #B8CBEE;
+    opacity: .6;
+    transition-duration: .3s;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 24px;
+}
+.links a:hover {
+    opacity: .8;
+}
+.links a.active {
+    color: white;
+    opacity: 1;
+}
+
+@media screen and (max-width: 375px) {
+    .links a {
+        font-size: 18px;
+    }
+}

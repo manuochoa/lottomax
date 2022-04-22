@@ -1,0 +1,53 @@
+.main {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.side {
+    width: 60%;
+}
+.text {
+    width: 80%;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.diamonds {
+    width: 40%;
+}
+.diamonds img {
+    width: 100%;
+    position: relative;
+    top: -20px;
+}
+
+@media screen and (max-width: 1280px) {
+    .text {
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .diamonds {
+        display: none;
+    }
+    .side {
+        width: 100%;
+    }
+    .text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .main {
+        padding-top: 0px;
+        margin-bottom: 0;
+    }
+    .text {
+        gap: 16px;
+        margin-top: 16px;
+    }
+}

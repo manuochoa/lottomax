@@ -1,0 +1,26 @@
+.main {
+    background-color: transparent;
+    padding: 0;
+    outline: none;
+    display: flex;
+    align-items: center;
+    /* gap: 0 24px; */
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    cursor: pointer;
+    position: relative;
+    left: -25px;
+}
+.main:hover p {
+    text-decoration: underline;
+}
+.main img {
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 350px) {
+    .main {
+        transform: scale(.8);
+    }
+}

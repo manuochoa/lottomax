@@ -1,0 +1,90 @@
+.main {
+    width: 100%;
+    padding: 13px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    position: absolute;
+}
+.side {
+    display: flex;
+    align-items: center;
+}
+.side h2 {
+    font-size: 24px;
+    font-family: 'Valky';
+    color: white;
+    margin-right: 40px;
+}
+.links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+.links a {
+    font-family: 'MetroSans-Medium';
+    font-size: 16px;
+    color: #B8CBEE;
+    opacity: .6;
+    transition-duration: .3s;
+    font-weight: 600;
+    text-decoration: none;
+}
+.links a:hover {
+    opacity: .8;
+}
+.links a.active {
+    color: white;
+    opacity: 1;
+}
+.walletBut {
+    background: rgba(174, 201, 233, 0.06) !important;
+    border-radius: 8px !important;
+    border: 1px solid #5E6B84 !important;
+    font-family: 'MetroSans-Bold' !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+    color: white !important;
+    text-transform: initial !important;
+    padding: 12px 30px !important;
+}
+.walletBut:hover {
+    background: rgba(174, 201, 233, 0.12) !important;
+}
+.burger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .links {
+        display: none;
+    }
+    .burger {
+        display: block;
+        margin-right: 16px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .side h2 {
+        margin-right: 0;
+    }
+    .burger {
+        margin-right: 0;
+        margin-left: 16px;
+    }
+    .side {
+        flex-direction: row-reverse;
+    }
+    .walletBut {
+        padding: 6px 15px !important;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .main {
+        padding: 15px;
+    }
+}

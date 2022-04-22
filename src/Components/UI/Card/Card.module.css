@@ -1,0 +1,11 @@
+.main {
+    width: 100%;
+    background: linear-gradient(253.61deg, #171627 -6.41%, #212536 105.68%);
+    backdrop-filter: blur(16px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    box-sizing: border-box;
+}

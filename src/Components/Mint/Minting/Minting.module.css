@@ -1,0 +1,135 @@
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.bigCard {
+    height: calc(100vh - 310px)
+}
+.limit {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'MetroSans-Bold';
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.limit p {
+    color: white;
+}
+.limit p + p {
+    color: #B8CBEE;
+    opacity: 0.6;
+}
+.fields {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 8px;
+    margin-bottom: auto;
+}
+.field {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    border-image: linear-gradient(269.87deg, rgba(174, 201, 233, .2) 0.1%, rgba(174, 201, 233, 0) 90%) 100% 0%;
+    border-left: none; 
+    border-right: none; 
+    border-top: none;
+    border-bottom: 1px solid;
+    padding-bottom: 8px;
+}
+.field p {
+    font-size: 12px;
+    font-weight: 700;
+}
+.bigCard input {
+    text-align: center !important;
+}
+.afterInput {
+    margin-top: 8px;
+}
+.result {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    box-sizing: border-box;
+    background: rgba(174, 201, 233, 0.04);
+    border-radius: 16px;
+    margin-top: auto;
+    margin-bottom: 15px;
+}
+.resultLevel {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border-image: linear-gradient(269.87deg, rgba(174, 201, 233, .2) 0.1%, rgba(174, 201, 233, 0) 90%) 100% 0%;
+    border-left: none; 
+    border-right: none; 
+    border-top: none;
+    border-bottom: 1px solid;
+    padding-bottom: 8px;
+}
+.resultLevel span {
+    font-size: 16px;
+    font-family: 'MetroSans-Regular';
+    color: white;
+}
+.resultLevel + .resultLevel {
+    padding-top: 8px;
+}
+.price {
+    display: flex;
+    gap: 8px;
+}
+.discount {
+    color: white;
+    background: rgba(174, 201, 233, 0.15);
+    border-radius: 6px;
+    font-style: italic;
+    font-size: 12px;
+    padding: 4px 8px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1440px) {
+    .bigCard {
+        height: calc(100vh - 274px);
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .fields {
+        margin-bottom: auto;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .bigCard {
+        height: calc(100vh - 224px);
+    }
+    .limit {
+        font-size: 18px;
+    }
+    .result {
+        margin-top: 8px;
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .bigCard {
+        height: fit-content;
+        margin-top: 16px;
+    }
+    .fields {
+        margin-bottom: 16px;
+    }
+    .result {
+        margin-top: 16px;
+    }
+}

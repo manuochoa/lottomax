@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+*
+{
+    margin:0px;
+    padding:0px;
+}
+
+// Make 100% height of browser window
+body, #root {
+    height: 100%;
+}
+
+// General wrapper for site
+.wrapper{
+    display: block;
+    height: 100%;
+    overflow: hidden;
+}
