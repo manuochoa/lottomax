@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Home from '../../Pages/Home/Home';
 import AboutUs from '../../Pages/AboutUs/AboutUs';
 import '../../Assets/Scss/styles.scss';
@@ -23,7 +23,11 @@ const pages = [
 const TransitionRoutes = () => {
     const location = useLocation()
 
+    const navigate = useNavigate()
+
     const containerRef = useRef()
+
+    const [ts, setTs] = useState(0)
 
     const [currentPage, setCurrentPage] = useState(
         pages.find(page => page.path === location.pathname) ?
@@ -37,6 +41,34 @@ const TransitionRoutes = () => {
         setIsOpenConnectWallet(!isOpenConnetWallet)
     }
 
+    const handleStart = (e) => {
+        setTs(e.touches[0].clientX)
+    }
+
+    const handleEnd = (e) => {
+        let te = e.changedTouches[0].clientX
+        if(ts > te + 5){
+            if(currentPage.order + 1 <= pages.length - 1) {
+                navigate(`${pages[currentPage.order + 1].path}`)
+            }
+        }else if(ts < te - 5){
+            if(currentPage.order - 1 >= 0) {
+                navigate(`${pages[currentPage.order - 1].path}`)
+            }
+        }
+        setTs(0)
+    }
+
+    useEffect(() => {
+        const el = containerRef.current;
+        el.addEventListener("touchstart", handleStart, false);
+        el.addEventListener("touchend", handleEnd, false);
+        return () => { 
+            el.removeEventListener("touchstart", handleStart)
+            el.removeEventListener("touchend", handleEnd)
+        }
+      });
+
     useEffect(() => {
         setCurrentPage(
             pages.find(page => page.path === location.pathname) ?
@@ -44,7 +76,6 @@ const TransitionRoutes = () => {
             pages[0]
         )
     }, [location.pathname])
-
 
     return (
         <div className={`wrapper ${currentPage.name}`} ref={containerRef}>
