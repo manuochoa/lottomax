@@ -3,6 +3,7 @@ import PaddingContainer from '../../Components/UI/Container/PaddingContainer/Pad
 import classes from './Mint.module.css'
 
 import diamond_light from '../../Assets/Images/diamond_light.png'
+import diamond from '../../Assets/Gif/diamond.gif'
 import Card from '../../Components/UI/Card/Card'
 import Text from '../../Components/UI/Text/Text/Text'
 import Header from '../../Components/UI/Text/Header/Header'
@@ -39,7 +40,8 @@ const Mint = (props) => {
                         <Text variant="label">Total Tickets</Text>
                     </Card>
                     <div className={classes.logoContainer}>
-                        <img src={diamond_light} alt="logo"/>
+                        <div className={classes.svet}/>
+                        <img src={diamond} alt="logo"/>
                     </div>
                     <Card className={classes.smallCard}>
                         <Text variant="p1">114</Text>

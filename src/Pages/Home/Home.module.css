@@ -101,6 +101,16 @@
     }
     .diamondMobile {
         margin-top: 40px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+    .diamondMobile img {
+        width: 65%;
+    }
+    .main button {
+        margin: auto;
     }
     .subHeader img {
         left: -205px;
@@ -110,6 +120,15 @@
     }
     .text {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .diamondMobile {
+        margin-bottom: 0px;
+    }
+    .diamondMobile img {
+        width: 40%;
     }
 }
 

@@ -20,10 +20,10 @@ const Navbar = (props) => {
                 </div>
             </div>
             <div className={classes.side}>
+                <Button className={classes.walletBut} onClick={handleWallet}>Connect Wallet</Button>
                 <div className={classes.burger}>
                     <Burger/>
                 </div>
-                <Button className={classes.walletBut} onClick={handleWallet}>Connect Wallet</Button>
             </div>
            
         </div>

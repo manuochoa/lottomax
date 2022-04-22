@@ -39,12 +39,25 @@
     margin: 0 110px;
     width: 150px;
     z-index: 0;
+    position: relative;
+}
+.svet {
+    mix-blend-mode: normal;
+    filter: blur(60px);
+    background-image: url("../../Assets/Images/diamond.png");
+    position: absolute;
+    z-index: 0;
+    width: 200px;
+    height: 100px !important;
+    left: -115px;
+    top: -20px;
 }
 .logoContainer img {
+    z-index: 1;
     position: absolute;
-    /* top: -40px; */
+    top: -40px;
     z-index: 0;
-    width: 412px;
+    width: 212px;
     animation: select 2s infinite ease-in-out;
 }
 .bigCard {
@@ -112,8 +125,12 @@
         width: fit-content;
         margin: 0 80px;
     }
+    .svet {
+        width: 150px;
+        left: -100px;
+    }
     .logoContainer img {
-        width: 300px;
+        width: 150px;
         top: -20px;
     }
     .header {

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Navigate, Route, Routes, useLocation, useNavigate } from 'react-router-dom';
+import { Navigate, Route, useLocation, useNavigate } from 'react-router-dom';
 import Home from '../../Pages/Home/Home';
 import AboutUs from '../../Pages/AboutUs/AboutUs';
 import '../../Assets/Scss/styles.scss';
@@ -29,6 +29,8 @@ const TransitionRoutes = () => {
 
     const [ts, setTs] = useState(0)
 
+    const [tsY, setTsY] = useState(0)
+
     const [currentPage, setCurrentPage] = useState(
         pages.find(page => page.path === location.pathname) ?
         pages.find(page => page.path === location.pathname) :
@@ -43,15 +45,18 @@ const TransitionRoutes = () => {
 
     const handleStart = (e) => {
         setTs(e.touches[0].clientX)
+        setTsY(e.touches[0].clientY)
     }
 
     const handleEnd = (e) => {
         let te = e.changedTouches[0].clientX
-        if(ts > te + 5){
+        let teY = e.changedTouches[0].clientY
+
+        if(ts > te + 5 && tsY >= teY - 450){
             if(currentPage.order + 1 <= pages.length - 1) {
                 navigate(`${pages[currentPage.order + 1].path}`)
             }
-        }else if(ts < te - 5){
+        }else if(ts < te - 5 && tsY >= teY - 450){
             if(currentPage.order - 1 >= 0) {
                 navigate(`${pages[currentPage.order - 1].path}`)
             }
