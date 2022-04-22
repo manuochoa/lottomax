@@ -5,7 +5,7 @@ import TransitionRoutes from './Components/Router/TransitionRoutes';
 
 const App = (props) => {
   return (
-    <Router basename='/'>
+    <Router>
       <HttpsRedirect>
         <TransitionRoutes/>
       </HttpsRedirect>
