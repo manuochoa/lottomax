@@ -75,7 +75,7 @@ const Mint = (props) => {
                        <Lottery date={date}/>
                     </div>
                 </div>
-                <div className={classes.mobile}>
+                <div className={classes.tablet}>
                     <div className={classes.mobileContainer}>
                         <div className={classes.side}>
                             <Minting
@@ -96,6 +96,29 @@ const Mint = (props) => {
                         <Card className={classes.bigCard}>
                             <CustomSlider images={nfts}/>
                         </Card>
+                    </div>
+                </div>
+                <div className={classes.mobile}>
+                    <div className={classes.mobileContainer}>
+                        <div className={classes.side}>
+                            <Minting
+                                count={count}
+                                handleCount={handleCount}
+                                handleInputCount={handleInputCount}
+                                total={total}
+                                discount={discount}
+                                currency={currency}
+                            />
+                        </div>
+                        <div className={classes.center}>
+                            <Header variant="h3">NFTs Preview</Header>
+                            <Card className={classes.bigCard}>
+                                <CustomSlider images={nfts}/>
+                            </Card>
+                        </div>
+                        <div className={classes.side}>
+                            <Lottery date={date}/>
+                        </div>
                     </div>
                 </div>
             </PaddingContainer>
