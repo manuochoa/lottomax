@@ -52,7 +52,7 @@ const TransitionRoutes = () => {
         let te = e.changedTouches[0].clientX
         let teY = e.changedTouches[0].clientY
 
-        if(ts > te + 5 && tsY >= teY - 100000){
+        if(ts > te + 100 && tsY >= teY - 450){
             if(currentPage.order + 1 <= pages.length - 1) {
                 navigate(`${pages[currentPage.order + 1].path}`)
             }

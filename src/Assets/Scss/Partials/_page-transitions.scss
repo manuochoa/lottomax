@@ -17,6 +17,8 @@
   }
   &.mint {
     background-image: url('../../Images/mint_bg.webp');
+    height: fit-content;
+    overflow-y: scroll;
   }
   &.contact_us{
     background-image: url('../../Images/contact_us_bg.webp');

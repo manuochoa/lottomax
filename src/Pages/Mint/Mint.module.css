@@ -3,6 +3,8 @@
     justify-content: flex-start;
     padding: 0 24px;
     z-index: 124;
+    max-height: unset;
+    height: fit-content;
 }
 .mobile {
     display: none;
