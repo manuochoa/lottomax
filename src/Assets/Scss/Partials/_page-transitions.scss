@@ -1,26 +1,39 @@
 
 .wrapper {
-  transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
   height: 100vh;
-  background-image: url('../../Images/mint_bg.webp');
+  background-image: url('../../Images/mint_bg.jpg');
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size:cover;
   background-size: cover;
+  background-repeat: no-repeat;
   
   &.home {
-    background-image: url('../../Images/homebg.webp');
+    background-image: url('../../Images/homebg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   &.about_us {
-    background-image: url('../../Images/about_us_bg.webp');
+    background-image: url('../../Images/about_us_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   &.how_it_works{
-    background-image: url('../../Images/how_it_works_bg.webp');
+    background-image: url('../../Images/how_it_works_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   &.mint {
-    background-image: url('../../Images/mint_bg.webp');
-    height: fit-content;
+    background-image: url('../../Images/mint_bg.jpg');
     overflow-y: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   &.contact_us{
-    background-image: url('../../Images/contact_us_bg.webp');
+    background-image: url('../../Images/contact_us_bg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
