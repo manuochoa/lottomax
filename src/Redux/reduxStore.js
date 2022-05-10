@@ -1,12 +1,29 @@
-import { combineReducers, createStore } from 'redux';
-import commonReducer from './commonReducer';
+import { combineReducers, applyMiddleware, createStore } from "redux";
+import thunkMiddleWare from "redux-thunk";
+import multi from "redux-multi";
+import commonReducer from "./commonReducer";
+import signerReducer from "./signerReducer";
+import storage from "redux-persist/lib/storage";
+import { persistReducer } from "redux-persist";
+
+const persistConfig = {
+  key: "counter",
+  storage,
+  whitelist: ["common"],
+};
 
 let reducers = combineReducers({
-    common: commonReducer  
-})
+  common: commonReducer,
+  signer: signerReducer,
+});
 
-let store = createStore(reducers)
+const persistedReducer = persistReducer(persistConfig, reducers);
 
-window.store = store
+let store = createStore(
+  persistedReducer,
+  applyMiddleware(thunkMiddleWare, multi)
+);
 
-export default store
+window.store = store;
+
+export default store;
