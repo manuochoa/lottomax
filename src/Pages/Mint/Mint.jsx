@@ -86,7 +86,14 @@ const Mint = (props) => {
         </Card>
       </div>
       <div className={classes.statsMobile}>
-        <Stats />
+        <Stats
+          totalPayout={totalPayout}
+          jackpot={jackpot}
+          smallJackpot={smallJackpot}
+          entries={entries}
+          validTickets={validTickets?.length}
+          pendingRewards={pendingRewards}
+        />
       </div>
       <div className={classes.content}>
         <div className={classes.side}>

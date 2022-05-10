@@ -91,10 +91,10 @@ const Minting = (props) => {
           {busdApproved ? "MINT" : "Approve"}
         </CustomButton>
         <div className={classes.reward}>
-          <div className={classes.dopCard}>
+          {/* <div className={classes.dopCard}>
             <Text variant="p1">257</Text>
             <Text variant="label">Total № of Tickets you Minted</Text>
-          </div>
+          </div> */}
           {/* <CustomButton>Claim Rewards</CustomButton> */}
         </div>
       </Card>
